@@ -1,0 +1,31 @@
+git --version
+
+git config --global user.name "Your Name"
+git config --global user.email "your-email@example.com"
+
+git config user.name "Pranjal"
+git config user.email "your-email@example.com"
+
+
+mkdir my-project
+cd my-project
+
+git init
+
+New-Item commands.txt
+
+git add .
+git commit -m "Added commands file"
+
+
+First create repo on GitHub:
+
+Go to GitHub
+→ Click New Repository
+→ Name it (e.g., my-project)
+→ Click Create
+
+
+git remote add origin https://github.com/6-Pranjal/DSA--A-Z-.git
+git branch -M main
+git push -u origin main
