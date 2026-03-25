@@ -29,3 +29,14 @@ Go to GitHub
 git remote add origin https://github.com/6-Pranjal/DSA--A-Z-.git
 git branch -M main
 git push -u origin main
+
+
+git checkout -b dev
+git push -u origin dev
+
+git checkout main
+git pull
+git merge dev
+git push
+
+:q!
