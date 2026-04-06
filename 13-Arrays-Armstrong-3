@@ -1,0 +1,28 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class Main {
+    
+    public static String reverse(int n){
+        int s=0;
+        int a=n;
+        while(n>0){
+            int d=n%10;
+            s=s+(d*d*d);
+            n=n/10;
+        }
+        if(a==s){return "Armstrong";}
+        return "not Armstrong";
+    }
+    
+    
+ 
+    
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+       int n = sc.nextInt();
+      String ans = reverse(n);
+       System.out.println(ans);
+       
+    }
+}
