@@ -1,0 +1,58 @@
+// 8
+// 13
+// [0, 1, 1, 2, 3, 5, 8, 13, 0]
+// === Code Execution Successful ===
+
+
+
+
+
+import java.util.*;
+class Main {
+    
+    public static int fibo_rec(int n , int[] dp){
+        if(dp[n]!=-1){
+        return dp[n];
+        }
+        
+        if(n==0){
+            return dp[n]=0;
+        }
+        if(n==1){
+            return dp[n]=1;
+        }
+        
+        
+        dp[n]=fibo_rec(n-1 , dp)+fibo_rec(n-2 , dp);
+        return dp[n];
+    }
+    
+    public static int fibo_tab(int n , int[]dp){
+      dp[0]=0;
+      dp[1]=1;
+      for(int i=2;i<n;i++){
+          dp[i]=dp[i-1]+dp[i-2];
+      }
+      
+      return dp[n-1];
+        
+    }
+    
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        // int[] dp=new int[n+1];
+        // Arrays.fill(dp,-1);
+        
+        // System.out.println(fibo_rec(n, dp));
+        // System.out.print(Arrays.toString(dp));
+        
+        
+        
+        int[] dp1=new int[n+1];
+        System.out.println(fibo_tab(n, dp1));
+        System.out.print(Arrays.toString(dp1));
+        
+    }
+}
+
