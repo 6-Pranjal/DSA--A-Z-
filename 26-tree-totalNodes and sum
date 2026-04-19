@@ -1,0 +1,82 @@
+import java.util.*;
+class Main {
+    
+    static class Node{
+        int data;
+        Node left;
+        Node right;
+        
+        Node(int data){
+            this.data=data;
+            this.left=null;
+            this.right=null;
+        }
+    }
+    
+    static class BinaryTree{
+        static int i=-1;
+        
+        public static Node treeCreate(int[] nodes){
+            i++;
+            
+            if(nodes[i]==-1){
+                return null;
+            }
+            
+            Node n=new Node(nodes[i]);
+            n.left=treeCreate(nodes);
+            n.right=treeCreate(nodes);
+            
+            return n;
+        }
+    }
+    
+  
+
+  public static int nodeCount(Node root ){
+      if(root==null){
+          return 0;
+      }
+  
+      return 1+ nodeCount(root.left) + nodeCount(root.right);
+  }
+
+
+
+  public static int sum(Node root ){
+      if(root==null){
+          return 0;
+      }
+      return root.data+sum(root.left) + sum(root.right);
+  }
+  
+    
+  
+    
+    public static void main(String[] args) {
+        
+         /*
+         
+        1
+      /   
+     2     
+    / \   
+   4   5  
+   
+       */
+ 
+         int[] nodes = {1, 2, 4, -1,-1, 5, -1, -1,-1};
+         
+         
+         Node root = BinaryTree.treeCreate(nodes);
+         System.out.println(root.data);
+         
+        
+       
+        System.out.print(nodeCount(root));
+        System.out.print(sum(root));
+     
+        
+        
+    }
+}
